@@ -15,10 +15,7 @@ export default function Post({ postData }) {
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
-        <div
-          dangerouslySetInnerHTML={{ __html: postData.contentHTML }}
-          allowDangerousHtml
-        ></div>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }}></div>
       </article>
     </Layout>
   );
