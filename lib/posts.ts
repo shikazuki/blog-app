@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import remark from "remark";
+import highlight from "remark-highlight.js";
 import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -10,6 +11,7 @@ export function getSortedPostsData(): {
   id: string;
   date: string;
   title: string;
+  description: string;
 }[] {
   // Get file names under /posts
   const fileNames = fs
@@ -29,7 +31,11 @@ export function getSortedPostsData(): {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string }),
+      ...(matterResult.data as {
+        date: string;
+        title: string;
+        description: string;
+      }),
     };
   });
   // Sort posts by date
@@ -57,7 +63,13 @@ export function getAllPostIds(): { params: { id: string } }[] {
 
 export async function getPostData(
   id: string
-): Promise<{ id: string; contentHTML: string; date: string; title: string }> {
+): Promise<{
+  id: string;
+  contentHTML: string;
+  date: string;
+  title: string;
+  description: string;
+}> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -66,6 +78,7 @@ export async function getPostData(
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
+    .use(highlight)
     .use(html)
     .process(matterResult.content);
 
@@ -75,6 +88,10 @@ export async function getPostData(
   return {
     id,
     contentHTML,
-    ...(matterResult.data as { date: string; title: string }),
+    ...(matterResult.data as {
+      date: string;
+      title: string;
+      description: string;
+    }),
   };
 }

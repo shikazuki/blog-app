@@ -4,7 +4,9 @@ import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
 import Date from "../components/date";
 import utilStyles from "../styles/utils.module.css";
+import styles from "./index.module.css";
 import { getSortedPostsData } from "../lib/posts";
+import hljs from "highlight.js";
 
 export default function Home({
   allPostsData,
@@ -12,6 +14,7 @@ export default function Home({
   allPostsData: {
     date: string;
     title: string;
+    description: string;
     id: string;
   }[];
 }) {
@@ -20,28 +23,22 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>
-          .)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+      <section>
+        {allPostsData.map(({ id, date, title, description }) => (
+          <div className={styles.blog} key={id}>
+            <div className={styles.blogTitle}>
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
-              <small className={utilStyles.lightText}>
-                <Date dateString={date}></Date>
-              </small>
-            </li>
-          ))}
-        </ul>
+            </div>
+            <div>{description}</div>
+            <small
+              className={`${styles.blogDate} ${utilStyles.textRight} ${utilStyles.lightText}`}
+            >
+              <Date dateString={date}></Date>
+            </small>
+          </div>
+        ))}
       </section>
     </Layout>
   );

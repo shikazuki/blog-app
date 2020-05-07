@@ -8,20 +8,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  border-bottom: 1px solid #094067;
 }
 
-.headerImage {
-  width: 6rem;
-  height: 6rem;
-  border: 1px solid #e1e4e8;
+.siteTitle {
+  font-size: 2rem;
 }
 
-.headerHomeImage {
-  width: 8rem;
-  height: 8rem;
-  border: 1px solid #e1e4e8;
-}
-
-.backToHome {
-  margin: 3rem 0 0;
+.siteTitle > a {
+  text-decoration: none;
+  color: inherit;
 }
