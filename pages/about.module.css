@@ -1,0 +1,21 @@
+
+.hero {
+  display: flex;
+}
+.heroImg {
+  width: 50%;
+  text-align: center;
+}
+.heroImg img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.heroDescription {
+  width: 50%;
+}
+
+.heroName {
+  font-size: 1.5rem;
+}
+

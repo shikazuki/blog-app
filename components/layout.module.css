@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 58px;
 
   border-bottom: 1px solid #094067;
 }
 
 .main {
-  height: calc(100% - 58px - 1rem - 32px - 2px);
+  min-height: calc(100% - 58px - 58px);
 }
 
 .footer {
+  height: 58px;
   border-top: 1px solid #094067;
 }
 
@@ -20,8 +22,8 @@
   justify-content: space-between;
 
   max-width: 36rem;
-  padding: 0 2rem;
-  margin: 0.5rem auto;
+  padding: 0.5rem 0.2rem;
+  margin: 0 auto;
 }
 
 .followMe {
@@ -37,9 +39,3 @@
 .siteTitle {
   font-size: 2rem;
 }
-
-.siteTitle > a {
-  text-decoration: none;
-  color: inherit;
-}
-

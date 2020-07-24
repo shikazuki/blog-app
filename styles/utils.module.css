@@ -33,3 +33,8 @@
   padding: 3rem 1rem;
   margin: 0 auto;
 }
+
+.linkNormal {
+  text-decoration: none;
+  color: inherit;
+}

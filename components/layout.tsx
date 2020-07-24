@@ -38,14 +38,14 @@ export default function Layout({
       <header className={styles.header}>
         <div className={styles.siteTitle}>
           <Link href="/">
-            <a>{siteTitle}</a>
+            <a className={utilStyles.linkNormal}>{siteTitle}</a>
           </Link>
         </div>
       </header>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
           <div className={styles.footerInner}>
-        <div>About</div>
+        <Link href="/about"><a className={utilStyles.linkNormal}>About</a></Link>
         <div className={styles.followMe}>
             <span className={utilStyles.marginRightMini}>Follow me</span>
             <a href="https://github.com/shikazuki" target="_blank"><img className={`${styles.snsIcon} ${utilStyles.marginRightMini}`} src="/images/github-logo.png"/></a>
