@@ -23,3 +23,13 @@
 .textCenter {
   text-align: center;
 }
+
+.marginRightMini {
+  margin-right: 0.5rem;
+}
+
+.container {
+  max-width: 36rem;
+  padding: 3rem 1rem;
+  margin: 0 auto;
+}

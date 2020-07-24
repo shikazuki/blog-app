@@ -23,7 +23,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
+      <section className={utilStyles.container}>
         {allPostsData.map(({ id, date, title, description }) => (
           <div className={styles.blog} key={id}>
             <div className={styles.blogTitle}>

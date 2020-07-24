@@ -1,15 +1,37 @@
-.container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
-}
-
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
 
   border-bottom: 1px solid #094067;
+}
+
+.main {
+  height: calc(100% - 58px - 1rem - 32px - 2px);
+}
+
+.footer {
+  border-top: 1px solid #094067;
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  max-width: 36rem;
+  padding: 0 2rem;
+  margin: 0.5rem auto;
+}
+
+.followMe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.snsIcon {
+  width: 32px;
 }
 
 .siteTitle {
@@ -20,3 +42,4 @@
   text-decoration: none;
   color: inherit;
 }
+
