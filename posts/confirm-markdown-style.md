@@ -1,7 +1,7 @@
 ---
-title: "Confirm Markdown Style"
+title: "MarkdownのHTMLスタイルを確認する"
 date: "2020-04-01"
-description: "For Confirming Markdown Style."
+description: "本サイトのHTMLスタイルを確認する."
 ---
 
 # Header

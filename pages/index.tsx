@@ -6,7 +6,6 @@ import Date from "../components/date";
 import utilStyles from "../styles/utils.module.css";
 import styles from "./index.module.css";
 import { getSortedPostsData } from "../lib/posts";
-import hljs from "highlight.js";
 
 export default function Home({
   allPostsData,
